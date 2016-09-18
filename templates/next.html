@@ -1,0 +1,66 @@
+<div class="page-next">
+  <section>
+    <div>
+      <svg class="slide-icon" width="97px" height="auto" viewBox="0 0 97 93" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+        <desc>Created with Sketch.</desc>
+        <defs></defs>
+        <path d="M0,83.879 L13.754,79.352 L13.754,12.936 L0,8.408 L0,83.879 L0,83.879 Z M18.297,87.995 L32.621,83.28 L32.621,9.006 L18.297,4.291 L18.297,87.995 L18.297,87.995 Z M37.447,0 L37.447,92.286 L96.4,77.362 L96.4,14.925 L37.447,0 L37.447,0 Z" id="Shape" stroke="none" fill="#ffffff" fill-rule="evenodd"></path>
+      </svg>
+      <h1 class="text-heading-huge">Let's make a talk together.</h1>
+    </div>
+    <span class="arrow-down"></span>
+  </section>
+
+  <form method="post" action="/submit">
+
+  <% if (last_image) { %>
+  <section class="color-red">
+    <div>
+      <p>Your job: pick the next slide image.<br>
+      <strong>Here's the last one:</strong></p>
+    </div>
+  </section>
+  <section>
+    <img style="max-height: 95vw; width: auto; height: auto; max-width: 100%" src="<%= last_image %>" />
+  </section>
+  <% } else { %>
+  <section class="color-red">
+    <p>Hey, you're the first person to add a slide image.</p>
+  </section>
+  <% } %>
+
+  <section class="color-teal">
+    <div>
+      <p>Leave a URL for the next slide image.</p>
+      <input type="text" name="image" />
+      <p class="size-small">Please pick appropriate images ok?</p>
+    </div>
+  </section>
+
+
+  <section>
+    <div>
+      <% if (last_words) { %>
+      <p class="size-small">We're also creating the talk's title. The last few words so far:</p>
+      <p><strong><%= last_words %></strong>
+      <% } else { %>
+      <p>We're also creating the talk's title.</p>
+      <% } %>
+     </div>
+  </section>
+
+  <section class="color-red">
+    <div>
+      <p>Add a word to the title.</p>
+      <input type="text" name="word" />
+      <p class="size-small">Again, appropriate words only. Use common sense?</p>
+    </div>
+  </section>
+
+  <section>
+    <button type="submit">Release the Jokes</button>
+  </section>
+
+  </form>
+</div>

@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "test": "standard --fix",
+    "build": "node-sass --source-map=true src/sass/style.scss public/style.css",
+    "watch": "npm run build && node-sass --watch --source-map=true src/sass/style.scss public/style.css"
+  },
+  "devDependencies": {
+    "node-sass": "^3.10.0",
+    "standard": "^8.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "lodash": "^4.15.0"
+  }
+}

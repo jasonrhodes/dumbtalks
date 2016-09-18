@@ -1,0 +1,114 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  background-color: white;
+  color: $primary;
+  font-family: Roboto;
+
+  .color-teal {
+    color: $teal;
+  }
+
+  .color-red {
+    color: $red;
+  }
+}
+
+.topbar {
+  background-color: rgba(0,0,0,0.95);
+  width: 100%;
+  height: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.slide-icon {
+  display: block;
+  transform: scale(1);
+  margin: 0 auto;
+  position: relative;
+  top: -1em;
+
+  path {
+    fill: $primary;
+  }
+}
+
+h1, p {
+  font-size: 2rem;
+}
+
+@media (min-width: $min-bp-small) {
+  .slide-icon {
+    transform: scale(1.6);
+  }
+
+  h1, p {
+    font-size: 4rem;
+  }
+}
+
+.size-small {
+  font-size: 1rem;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+section {
+  height: 98vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 30px 50px;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid rgba(0,0,0,0.95);
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    cursor: pointer;
+  }
+}
+
+input[type="text"] {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 15px;
+  outline: none;
+  width: 90%;
+}
+
+button[type="submit"] {
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  padding: 20px 40px;
+  color: #fff;
+  background-color: $blue;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
