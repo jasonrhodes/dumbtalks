@@ -1,0 +1,22 @@
+<% if (!access) { %>
+
+<section>
+  <h1>Nope.</h1>
+</section>
+
+<% } else { %>
+
+<div>
+  <h1 class="show-title"><%= title %></h1>
+
+  <div class="show-images">
+  <% images.forEach(function(url) { %>
+    <div class="show-image">
+      <img src="<%= url %>">
+    </div>
+  <% }) %>
+  </div>
+
+</div>
+
+<% } %>

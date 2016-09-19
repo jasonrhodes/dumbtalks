@@ -11,6 +11,11 @@ body {
   body .color-red {
     color: #F35151; }
 
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold; }
+
 .topbar {
   background-color: rgba(0, 0, 0, 0.95);
   width: 100%;
@@ -85,5 +90,19 @@ button[type="submit"] {
   transition: transform 0.1s ease-in-out; }
   button[type="submit"]:hover {
     transform: scale(1.1); }
+
+.show-title {
+  font-size: 2em; }
+
+.show-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; }
+  .show-images .show-image {
+    flex-basis: 18.2%;
+    display: flex;
+    align-items: center; }
+    .show-images .show-image img {
+      max-width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

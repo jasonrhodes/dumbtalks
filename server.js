@@ -23,6 +23,21 @@ app.get('/', (req, res) => {
   })
 })
 
+app.get('/thanks', (req, res) => {
+  res.type('text/html').send(template('thanks'))
+})
+
+app.get('/show', (req, res) => {
+  model.getAll((err, all) => {
+    if (err) return res.status(400).send(err)
+    res.type('text/html').send(template('show', {
+      access: (req.query.auth_key && req.query.auth_key === process.env.TOX_AUTH_KEY),
+      images: all.images,
+      title: all.title
+    }));
+  })
+})
+
 app.get('/lasts', (req, res) => {
   model.getLasts((err, lasts) => {
     if (err) return res.status(400).send(err)
