@@ -34,7 +34,7 @@ app.get('/show', (req, res) => {
       access: (req.query.auth_key && req.query.auth_key === process.env.TOX_AUTH_KEY),
       images: all.images,
       title: all.title
-    }));
+    }))
   })
 })
 
@@ -50,7 +50,7 @@ app.post('/submit', formParser, (req, res) => {
   if (body.image) model.push('images', body.image)
   if (body.word) model.push('words', body.word.split(' ').shift()) // only take the first word submitted, space-separated
   console.log('received slide from form', req.body)
-  res.redirect('/')
+  res.redirect('/thanks')
 })
 
 app.post('/reset', auth, (req, res) => {

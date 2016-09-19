@@ -43,7 +43,7 @@ h1, p {
     font-size: 4rem; } }
 
 .size-small {
-  font-size: 1.25rem; }
+  font-size: 1.4rem; }
 
 .align-left {
   text-align: left; }
@@ -70,6 +70,10 @@ section {
     left: 50%;
     bottom: 30px;
     cursor: pointer; }
+    section .arrow-down.color-teal {
+      border-top-color: #36D5CF; }
+    section .arrow-down.color-red {
+      border-top-color: #F35151; }
 
 input[type="text"] {
   font-size: 2rem;
@@ -83,7 +87,7 @@ button[type="submit"] {
   font-size: 2rem;
   font-weight: bold;
   border: none;
-  padding: 20px 40px;
+  padding: 40px 100px;
   color: #fff;
   background-color: #278EDB;
   cursor: pointer;

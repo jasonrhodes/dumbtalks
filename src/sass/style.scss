@@ -61,7 +61,7 @@ h1, p {
 }
 
 .size-small {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
 }
 
 .align-left {
@@ -92,6 +92,14 @@ section {
     left: 50%;
     bottom: 30px;
     cursor: pointer;
+
+    &.color-teal {
+      border-top-color: $teal;
+    }
+
+    &.color-red {
+      border-top-color: $red;
+    }
   }
 }
 
@@ -108,7 +116,7 @@ button[type="submit"] {
   font-size: 2rem;
   font-weight: bold;
   border: none;
-  padding: 20px 40px;
+  padding: 40px 100px;
   color: #fff;
   background-color: $blue;
   cursor: pointer;
