@@ -6,17 +6,24 @@ const formParser = bodyParser.urlencoded({ extended: true })
 const app = express()
 const template = require('./lib/template')
 const model = require('./lib/model')
+const auth = (req, res, next) => {
+  if (!req.body.auth_key || req.body.auth_key !== process.env.TOX_AUTH_KEY) {
+    return res.status(403).send('💩')
+  }
+  next()
+}
 
 app.use(express.static('public'))
+app.use(bodyParser.json())
 
-app.get('/next', (req, res) => {
+app.get('/', (req, res) => {
   model.getLasts((err, lasts) => {
     if (err) return res.status(400).send(err)
     res.type('text/html').send(template('next', lasts))
   })
 })
 
-app.get('/previous', (req, res) => {
+app.get('/lasts', (req, res) => {
   model.getLasts((err, lasts) => {
     if (err) return res.status(400).send(err)
     res.json(lasts)
@@ -28,7 +35,12 @@ app.post('/submit', formParser, (req, res) => {
   if (body.image) model.push('images', body.image)
   if (body.word) model.push('words', body.word.split(' ').shift()) // only take the first word submitted, space-separated
   console.log('received slide from form', req.body)
-  res.redirect('/next')
+  res.redirect('/')
+})
+
+app.post('/reset', auth, (req, res) => {
+  model.reset()
+  res.status(200).json({ ok: '👍🤖🔥' })
 })
 
 app.get('/api', (req, res) => {

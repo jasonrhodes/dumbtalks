@@ -24,35 +24,28 @@
   <section>
     <img style="max-height: 95vw; width: auto; height: auto; max-width: 100%" src="<%= last_image %>" />
   </section>
-  <% } else { %>
-  <section class="color-red">
-    <p>Hey, you're the first person to add a slide image.</p>
-  </section>
   <% } %>
 
   <section class="color-teal">
     <div>
-      <p>Leave a URL for the next slide image.</p>
+      <p>Leave a URL for the <%= last_image ? "next" : "first" %> slide image.</p>
       <input type="text" name="image" />
       <p class="size-small">Please pick appropriate images ok?</p>
     </div>
   </section>
 
-
+  <% if (last_words) { %>
   <section>
     <div>
-      <% if (last_words) { %>
-      <p class="size-small">We're also creating the talk's title. The last few words so far:</p>
+      <p class="size-small">Here's the last few words of the talk title so far:</p>
       <p><strong><%= last_words %></strong>
-      <% } else { %>
-      <p>We're also creating the talk's title.</p>
-      <% } %>
      </div>
   </section>
+  <% } %>
 
   <section class="color-red">
     <div>
-      <p>Add a word to the title.</p>
+      <p><%= last_words ? "Add a word to the title." : "Pick the first word of the title." %></p>
       <input type="text" name="word" />
       <p class="size-small">Again, appropriate words only. Use common sense?</p>
     </div>
